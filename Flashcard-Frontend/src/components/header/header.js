@@ -7,10 +7,10 @@ import { NavLink } from 'react-router-dom'
 
 
 const Header = () => (
-  <Row>  
+  <Row>
     <Navbar className="grey darken-2">
       <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="courses">Courses</NavLink></li>
+      <li><NavLink to="/cursos">Courses</NavLink></li>
     </Navbar>
   </Row>
 );

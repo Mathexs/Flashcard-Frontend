@@ -3,21 +3,23 @@ import React from "react";
 // Importantando o component Home
 import Home from "./components/home/home";
 // Importantando o component Contact
-import Courses from "./components/contact/courses";
+import Cursos from "./components/contact/courses";
 // Importando os components necessárias da lib react-materialize
 import { Container } from 'react-materialize';
 // Importanto o component <Switch /> e <Route /> da nossa Lib de rotas
-import { Switch, Route } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import FormCurso from './components/contact/formularioCurso'
 
-const Main = () => (
+const Main = (props) => (
   <main>
     <Container>
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route path='/courses' component={Courses}/>
-      </Switch>
+      <Routes>
+        <Route exact path='/' element={<Home/>}/>
+        <Route path='/forms' element={<FormCurso/>}/>
+        <Route path='/cursos' element={<Cursos cursosInfo={props.cursosInfo}/>}/>
+      </Routes>
     </Container>
-  </main>  
+  </main>
 );
 
 export default Main;
